@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Booking Website</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .movie-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .movie-card {
+            background-color: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .movie-poster {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .booking-button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: white; /* Changed text color to white for better contrast */
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Movie Booking Website</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Movies</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <section>
+        <div class="movie-container">
+            <div class="movie-card">
+                <img class="movie-poster" src="movie1.jpg" alt="Movie 1">
+                <h2>Movie 1</h2>
+                <p>Description of Movie 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <button class="booking-button" onclick="bookTicket('movie1')">Book Now</button>
+                <span id="movie1-count">0</span> Tickets Booked
+            </div>
+
+            <div class="movie-card">
+                <img class="movie-poster" src="movie2.jpg" alt="Movie 2">
+                <h2>Movie 2</h2>
+                <p>Description of Movie 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <button class="booking-button" onclick="bookTicket('movie2')">Book Now</button>
+                <span id="movie2-count">0</span> Tickets Booked
+            </div>
+
+            <!-- Add more movie cards as needed -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Movie Booking Website</p>
+    </footer>
+
+    <script>
+        function bookTicket(movieId) {
+            // Update the count for the respective movie
+            const countElement = document.getElementById(`${movieId}-count`);
+            const currentCount = parseInt(countElement.innerText);
+            countElement.innerText = currentCount + 1;
+        }
+    </script>
+</body>
+</html>
